@@ -1,6 +1,5 @@
 import { ApolloServer } from "@apollo/server";
 import {startStandaloneServer} from "@apollo/server/standalone"
-import express from 'express';
 import { typeDefs } from "./schema.js";
 
 //resolver tells how to a query will be processed for a graph
@@ -18,7 +17,11 @@ const resolvers={
               weight: data.weight,
               sprites: {
                 front_default: data.sprites.front_default
-              }
+              },
+              //mapping complex array in simpler array of string
+              types:data.types.map(t=>t.type.name),
+              //only first 4 moves are shown
+              moves:data.moves.slice(0,4).map(m=>m.move.name)
             };
         }
     }

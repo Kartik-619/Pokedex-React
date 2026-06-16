@@ -8,6 +8,8 @@ type Pokemon{
     height:Int
     weight:Int
     sprites:PokemonSprites
+    types:[String!]!
+    moves:[String!]!
     }
 
     type PokemonSprites{
