@@ -4,7 +4,7 @@ import Frame from './component/pokeframe'
 
 function App() {
   return (
-    <div className='mx-70 bg-indigo-500 w-4xl'>
+    <div className='h-full bg-indigo-500 w-screen '>
       <NavBar></NavBar>
       <Frame /></div>
       
